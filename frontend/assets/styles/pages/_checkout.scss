@@ -125,6 +125,14 @@
                 }
             }
         }
+        .just-validate-error-label {
+            font-size: 10px;
+            font-weight: 500;
+            color: $red;
+            position: absolute;
+            left: 12px;
+            top: calc(100% + 4px);
+        }
     }
     .form-submite {
         display: flex;
