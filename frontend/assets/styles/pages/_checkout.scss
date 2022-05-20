@@ -1,20 +1,28 @@
 .checkout {
     width: 100%;
-    margin: 20px;
+    margin: 20px 0;
     max-width: 880px;
+    display: flex;
+    flex-direction: column-reverse;
 
     @include media('>=tablet') {
-        display: flex;
+        flex-direction: row;
         align-items: flex-start;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     // Form
     &-form {
-        width: 67.4%;
-        margin-right: 12px;
+        @include media('>=tablet') {
+            width: 67.4%;
+            margin-right: 12px;
+        }
         &__list {
             counter-reset: section;
             padding: 0;
-            margin-left: 30px;
+            @include media('>=tablet') {
+                margin-left: 30px;
+            }
             &-item {
                 padding: 0;
                 margin-bottom: 44px;
@@ -26,8 +34,6 @@
     }
     .form-title {
         counter-increment: section;
-        // display: flex;
-        // align-items: center;
         margin-bottom: 20px;
         font-size: 13px;
         font-weight: 700;
@@ -44,7 +50,10 @@
             color: $white;
             position: absolute;
             top: -3px;
-            left: -30px;
+            left: -25px;
+            @include media('>=tablet') {
+                left: -30px;
+            }
         }
         svg {
             margin-left: 10px;
@@ -59,8 +68,14 @@
             display: block;
             position: relative;
             width: 100%;
+            margin-bottom: 20px;
+            @include media('>=tablet') {
+                margin-bottom: 0;
+            }
             & + .label {
-                margin-left: 12px;
+                @include media('>=tablet') {
+                    margin-left: 12px;
+                }
             }
             &-text {
                 position: absolute;
@@ -124,14 +139,14 @@
                     display: none;
                 }
             }
-        }
-        .just-validate-error-label {
-            font-size: 10px;
-            font-weight: 500;
-            color: $red;
-            position: absolute;
-            left: 12px;
-            top: calc(100% + 4px);
+            .just-validate-error-label {
+                font-size: 10px;
+                font-weight: 500;
+                color: $red;
+                position: absolute;
+                left: 12px;
+                top: calc(100% + 4px);
+            }
         }
     }
     .form-submite {
@@ -161,7 +176,9 @@
     }
     // Order
     .order {
-        width: calc(32.6% - 12px);
+        @include media('>=tablet') {
+            width: calc(32.6% - 12px);
+        }
         margin-bottom: 30px;
         padding: 5px;
         background-color: #fff;
