@@ -1,0 +1,26 @@
+main {
+    & > & {
+        padding: 2rem 0;
+        text-align: center;
+        button {
+            display: inline-block;
+            padding: .25rem .5rem;
+            margin-bottom: .5rem;
+            color: $white;
+            background-color: $indigo;
+            border: none;
+            border-radius: .25rem;
+            transition: .3s background-color;
+            cursor: pointer;
+
+            &:hover, &:active {
+                outline: none;
+                background-color: lighten($indigo, 5%);
+            }
+        }
+
+        img {
+            display: block;
+        }
+    }
+}
