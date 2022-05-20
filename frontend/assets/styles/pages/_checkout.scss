@@ -5,8 +5,9 @@
 
     @include media('>=tablet') {
         display: flex;
+        align-items: flex-start;
     }
-
+    // Form
     &-form {
         width: 67.4%;
         margin-right: 12px;
@@ -148,6 +149,63 @@
         }
         svg {
             margin-right: 8px;
+        }
+    }
+    // Order
+    .order {
+        width: calc(32.6% - 12px);
+        margin-bottom: 30px;
+        padding: 5px;
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 2px 2px -1px rgba($black, .15);
+        @include media('>=tablet') {
+            margin-top: 35px;
+            margin-bottom: 0;
+        }
+        &-holder {
+            padding: 13px 13px 13px 11px;
+            border: 1px dashed $gray;
+            border-radius: 4px;
+        }
+        &-title {
+            font-size: 13px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+        &-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            font-weight: 500;
+            td {
+                padding: 6px 0;
+                &:last-child {
+                    text-align: right;
+                }
+            }
+            &__separator {
+                td {
+                    padding: 4px 0;
+                    border-bottom: 1px dashed $gray;
+                }
+            }
+            &__purchases {
+                td {
+                    padding-top: 12px;
+                    padding-bottom: 8px;
+                }
+            }
+            &__total {
+                td {
+                    font-weight: 700;
+                    padding: 15px 0;
+                    vertical-align: top;
+                    &:last-child {
+                        font-size: 22px;
+                    }
+                }
+            }
         }
     }
 }

@@ -2,7 +2,41 @@
 @set('title', 'Checkout')
 
 @section('body')
-  <div class="checkout">
+<div class="checkout">
     @!component('components/form', {})
-  </div>
+    <div class="order">
+        <div class="order-holder">
+            <h2 class="order-title">Your order</h2>
+            <table class="order-table">
+                @each(item in state.cart.items)
+                <tr class="order-table__item">
+                    <td>{{ item.name }}</td>
+                    <td>$ {{ item.price }}</td>
+                </tr>
+                @end
+                <tr>
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="order-table__separator">
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="order-table__purchases">
+                    <td>Total purchases</td>
+                    <td>$ {{state.cart.totals.subTotal}}</td>
+                </tr>
+                <tr class="order-table__tax">
+                    <td>Estimated tax</td>
+                    <td>$ {{state.cart.totals.tax}}</td>
+                </tr>
+                <tr class="order-table__separator">
+                    <td colspan="2"></td>
+                </tr>
+                <tr class="order-table__total">
+                    <td>Total</td>
+                    <td>$ {{state.cart.totals.grandTotal}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
 @end
