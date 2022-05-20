@@ -34,6 +34,7 @@
     "@adonisjs/shield": "^7.0.2",
     "@adonisjs/view": "^6.0.2",
     "@snowdog/front-end-recruitment-test-submodule": "^1.0.0",
+    "include-media": "^1.4.10",
     "normalize.css": "^8.0.1",
     "proxy-addr": "^2.0.7",
     "reflect-metadata": "^0.1.13",
