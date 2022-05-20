@@ -1,0 +1,153 @@
+.checkout {
+    width: 100%;
+    margin: 20px;
+    max-width: 880px;
+
+    @include media('>=tablet') {
+        display: flex;
+    }
+
+    &-form {
+        width: 67.4%;
+        margin-right: 12px;
+        &__list {
+            counter-reset: section;
+            padding: 0;
+            margin-left: 30px;
+            &-item {
+                padding: 0;
+                margin-bottom: 44px;
+                &:before {
+                    display: none;
+                }
+            }
+        }
+    }
+    .form-title {
+        counter-increment: section;
+        // display: flex;
+        // align-items: center;
+        margin-bottom: 20px;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        &:before {
+            content: counter(section);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            background-color: $black;
+            border-radius: 50%;
+            color: $white;
+            position: absolute;
+            top: -3px;
+            left: -30px;
+        }
+        svg {
+            margin-left: 10px;
+        }
+    }
+    .input-group {
+        margin-bottom: 20px;
+        @include media('>=tablet') {
+            display: flex;
+        }
+        .label {
+            display: block;
+            position: relative;
+            width: 100%;
+            & + .label {
+                margin-left: 12px;
+            }
+            &-text {
+                position: absolute;
+                top: 7px;
+                left: 12px;
+                font-size: 13px;
+                font-weight: 700;
+            }
+            &-icon {
+                position: absolute;
+                top: 15px;
+                right: 15px;
+
+                .hint-icon {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding-top: 1px;
+                    width: 20px;
+                    height: 20px;
+                    font-size: 12px;
+                    font-weight: 700;
+                    color: $gray;
+                    border: 1px solid $gray;
+                    border-radius: 50%;
+                    transition: .3s background-color, .3s color;
+                    cursor: pointer;
+
+                    &:hover, &:active {
+                        background-color: $gray;
+                        color: $white;
+                    }
+                }
+            }
+            .input, .select {
+                @include placeholder {
+                    opacity: .6;
+                    transition: .3s opacity;
+                }
+                display: block;
+                width: 100%;
+                border-color: transparent;
+                padding: 22px 10px 6px;
+                border-radius: 4px;
+                box-shadow: 0 2px 2px -1px rgba($black, .15);
+                &:focus {
+                    outline: none;
+                    @include placeholder {
+                        opacity: 0;
+                    }
+                }
+            }
+            select {
+                appearance: none;
+                background-image: url("data:image/svg+xml,%3Csvg width='11' height='7' viewBox='0 0 11 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L5.5 5.5L9.5 1.5' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+                background-position: calc(100% - 20px) center;
+                background-repeat: no-repeat;
+                min-height: 50.4px;
+                cursor: pointer;
+                &::-ms-expand {
+                    display: none;
+                }
+            }
+        }
+    }
+    .form-submite {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 19px 20px 16px;
+        margin-top: 42px;
+        font-size: 14px;
+        font-weight: 700;
+        color: $white;
+        text-transform: uppercase;
+        background-color: $green;
+        border: none;
+        border-radius: 4px;
+        box-shadow: 0 2px darken($green, 10%);
+        transition: .3s background-color;
+        cursor: pointer;
+        &:hover, &:focus {
+            outline: none;
+            background-color: lighten($green, 5%);
+        }
+        svg {
+            margin-right: 8px;
+        }
+    }
+}
