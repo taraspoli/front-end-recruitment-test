@@ -216,4 +216,33 @@
             }
         }
     }
+    // Modal
+    #modal {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba($black, .6);
+        #modal-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 100%;
+            max-width: 480px;
+            height: 280px;
+            background-color: $white;
+            border-radius: 5px;
+            box-shadow: 0 2px 2px -1px rgba($black, .15);
+            padding: 20px;
+            z-index: 5;
+        }
+        p {
+            margin-bottom: 0;
+        }
+    }
 }
